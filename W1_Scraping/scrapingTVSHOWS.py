@@ -53,14 +53,13 @@ def scraper(url):
         # Prepare the variable for JSON data
         films = []
 
-        # Find all containers that might contain motorcycle information
         for index, film in enumerate(
             soup.find_all(
                 "li",
                 class_="ipc-metadata-list-summary-item sc-10233bc-0 TwzGn cli-parent",
             )
         ):
-            # Extracting the required data
+            # MENGEKSTRAK DATA YANG DIPERLUKAN
             film_title = film.find("h3", class_="ipc-title__text").text
             data_desc = film.find_all(
                 "span", class_="sc-b189961a-8 hCbzGp cli-title-metadata-item"
@@ -71,7 +70,6 @@ def scraper(url):
             star_rating = film.find("span", class_="ipc-rating-star--rating").text
 
             # MENAMBAHKAN DATA YANG TELAH DI SCRAPPING KE DALAM FILE JSON
-            # print("THIS IS FILM", film)
             films.append(
                 {
                     "Movie Name": film_title,
@@ -85,12 +83,9 @@ def scraper(url):
         # Close the WebDriver
         driver.quit()
 
-        # print(films)
-
         return films
 
     except Exception as e:
-        # Print the error message
         print("An error occurred: ", e)
 
         # Close the WebDriver
@@ -98,7 +93,7 @@ def scraper(url):
 
 
 if __name__ == "__main__":
-    # Define the URL
+    # URL NAME
     url = "https://www.imdb.com/chart/top/"
 
     # Call the scraper function
@@ -106,7 +101,7 @@ if __name__ == "__main__":
     print(data)
     # scraper(url)
 
-    # Save data to JSON file
+    # MENYIMPAN DATA KE JSON FILE
     with open("data_TVSHOWS.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
