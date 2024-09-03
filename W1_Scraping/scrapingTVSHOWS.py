@@ -72,11 +72,11 @@ def scraper(url):
             # MENAMBAHKAN DATA YANG TELAH DI SCRAPPING KE DALAM FILE JSON
             films.append(
                 {
-                    "Movie Name": film_title,
-                    "Movie Release": release_year,
-                    "Movie Duration": movie_duration,
-                    "Age Rating": age_rating,
-                    "Film Rating": star_rating,
+                    "TV SHOW NAME"    : film_title,
+                    "TV SHOW RELEASE" : release_year,
+                    "TV SHOW EPSIODES": movie_duration,
+                    "AGE RATING"      : age_rating,
+                    "TV SHOW RATING"  : star_rating,
                 }
             )
 
@@ -94,7 +94,7 @@ def scraper(url):
 
 if __name__ == "__main__":
     # URL NAME
-    url = "https://www.imdb.com/chart/top/"
+    url = "https://www.imdb.com/chart/toptv/"
 
     # Call the scraper function
     data = scraper(url)
