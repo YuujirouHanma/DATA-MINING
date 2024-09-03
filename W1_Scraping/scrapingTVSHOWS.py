@@ -69,21 +69,6 @@ def scraper(url):
             movie_duration = data_desc[1].text
             age_rating = data_desc[2].text if len(data_desc) > 2 else ""
             star_rating = film.find("span", class_="ipc-rating-star--rating").text
-            # print(film_title)
-            # print(data_desc[0].text)
-            # print(data_desc[1].text)
-            # print(data_desc[2].text if len(data_desc) > 1 else "")
-
-            # try:
-            #     film_title = film.find('h3', class_='ipc-title__text').text
-            #     # data_desc = film.soup.findAll('span', class_='sc-b189961a-8 hCbzGp cli-title-metadata-item')
-            #     # release_year = film.soup.find('span', class_='sc-b189961a-8 hCbzGp cli-title-metadata-item')
-            #     # movie_duration = film.soup.find('span', class_='sc-b189961a-8 hCbzGp cli-title-metadata-item')
-            #     # age_rating = film.soup.find('span', class_= 'sc-b189961a-8 hCbzGp cli-title-metadata-item')
-            #     star_rating = film.find('span', class_='ipc-rating-star--rating').text
-            # except AttributeError as e:
-            #     print(f"Error parsing IMDb Top 250 Movies data: {e}")
-            #     continue
 
             # MENAMBAHKAN DATA YANG TELAH DI SCRAPPING KE DALAM FILE JSON
             # print("THIS IS FILM", film)
@@ -122,7 +107,7 @@ if __name__ == "__main__":
     # scraper(url)
 
     # Save data to JSON file
-    with open("data_film.json", "w") as json_file:
+    with open("data_TVSHOWS.json", "w") as json_file:
         json.dump(data, json_file, indent=4)
 
-    print("Data telah selesai di scraped dan disimpan ke data_film.json.")
+    print("Data telah selesai di scraped dan disimpan ke data_TVSHOWS.json.")
