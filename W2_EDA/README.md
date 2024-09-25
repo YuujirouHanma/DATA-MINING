@@ -1,0 +1,1 @@
+Saya mengerjakan scraping data pada web Top 250 TV Shows menggunakan metode yang telah diajarkan. Namun, saya menambahkan skrip tambahan yang berfungsi untuk menggulir halaman web secara otomatis hingga mencapai bagian paling bawah, sehingga seluruh data TV Shows dapat diambil
